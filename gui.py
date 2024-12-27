@@ -151,6 +151,8 @@ def manage_users():
     exit_button = tk.Button(button_frame, text="Exit", command=manage_window.destroy)
     exit_button.pack(side=tk.RIGHT, padx=10)
 
+    manage_window.bind('<Return>', lambda event: remove_user(user_listbox))
+    
     # Populate the listbox with current users
     for user in user_credentials.keys():
         user_listbox.insert(tk.END, user)
